@@ -19,7 +19,9 @@ def test_task_stdout(capsys):
         "Last update           3d18h\n"
         "Outbound Interface    FastEthernet0/0\n"
     )
-    assert out, (
+    assert (
+        out
+    ), (
         "Нічого не виведено стандартний потік виведення. Потрібно не лише "
         "отримати потрібний результат, але й вивести його на стандартний потік "
         "виведення за допомогою print"

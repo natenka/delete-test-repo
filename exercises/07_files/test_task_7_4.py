@@ -17,11 +17,12 @@ def test_task_cfg_trunk_sw2(monkeypatch, tmpdir):
 
     task_vars = [var for var in dir(task_7_4) if not var.startswith("_")]
 
-    assert "trunk_dict" in task_vars, "Словник має бути записаний у змінну trunk_dict"
-    if not isinstance(task_7_4.trunk_dict, dict):
-        pytest.fail(
-            f"За завданням у змінній trunk_dict має бути словник, а в ній {type(task_7_4.result).__name__}"
-        )
+    assert (
+        "trunk_dict" in task_vars
+    ), "Словник має бути записаний у змінну trunk_dict"
+    assert (
+        type(task_7_4.trunk_dict) == dict
+    ), f"За завданням у змінній trunk_dict має бути словник, а в ній {type(task_7_4.result).__name__}"
     assert (
         correct_result == task_7_4.trunk_dict
     ), f"У змінній trunk_dict має бути словник {correct_result}"
@@ -44,11 +45,12 @@ def test_task_cfg_trunk_sw3(monkeypatch, tmpdir):
 
     task_vars = [var for var in dir(task_7_4) if not var.startswith("_")]
 
-    assert "trunk_dict" in task_vars, "Словник має бути записаний у змінну trunk_dict"
-    if not isinstance(task_7_4.trunk_dict, dict):
-        pytest.fail(
-            f"За завданням у змінній trunk_dict має бути словник, а в ній {type(task_7_4.result).__name__}"
-        )
+    assert (
+        "trunk_dict" in task_vars
+    ), "Словник має бути записаний у змінну trunk_dict"
+    assert (
+        type(task_7_4.trunk_dict) == dict
+    ), f"За завданням у змінній trunk_dict має бути словник, а в ній {type(task_7_4.result).__name__}"
     assert (
         correct_result == task_7_4.trunk_dict
     ), f"У змінній trunk_dict має бути словник {correct_result}"

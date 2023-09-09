@@ -34,11 +34,12 @@ def test_task_variables():
         "cfg_15.txt",
     ]
 
-    assert "result" in task_vars, "Список має бути записаний у змінну result"
-    if not isinstance(task_6_4.result, list):
-        pytest.fail(
-            f"За завданням у змінній result має бути список, а в ній {type(task_6_4.result).__name__}"
-        )
+    assert (
+        "result" in task_vars
+    ), "Список має бути записаний у змінну result"
+    assert (
+        type(task_6_4.result) == list
+    ), f"За завданням у змінній result має бути список, а в ній {type(task_6_4.result).__name__}"
     assert (
         correct_result == task_6_4.result
     ), f"У змінній result має бути список {correct_result}"

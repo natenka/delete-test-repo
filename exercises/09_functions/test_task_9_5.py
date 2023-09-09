@@ -56,13 +56,13 @@ def test_function_return_value():
     return_value = task_9_5.generate_trunk_config(
         trunk_vlans_mapping, template_trunk_mode
     )
-    if return_value is None:
-        pytest.fail("Функція нічого не повертає")
-    if not isinstance(return_value, list):
-        pytest.fail(
-            f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
-        )
-    assert correct_return_value == return_value, "Функція повертає неправильне значення"
+    assert return_value != None, "Функція нічого не повертає"
+    assert (
+        type(return_value) == list
+    ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
+    assert (
+        correct_return_value == return_value
+    ), "Функція повертає неправильне значення"
 
 
 def test_function_return_value_different_args():
@@ -89,10 +89,10 @@ def test_function_return_value_different_args():
     return_value = task_9_5.generate_trunk_config(
         trunk_vlans_mapping, template_trunk_mode
     )
-    if return_value is None:
-        pytest.fail("Функція нічого не повертає")
-    if not isinstance(return_value, list):
-        pytest.fail(
-            f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
-        )
-    assert correct_return_value == return_value, "Функція повертає неправильне значення"
+    assert return_value != None, "Функція нічого не повертає"
+    assert (
+        type(return_value) == list
+    ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
+    assert (
+        correct_return_value == return_value
+    ), "Функція повертає неправильне значення"

@@ -32,12 +32,10 @@ def test_function_return_value():
 
     assert os.path.exists("topology.yaml"), "Файл topology.yaml не існує"
     return_value = task_17_3b.transform_topology("topology.yaml")
-    if return_value is None:
-        pytest.fail("Функція нічого не повертає")
-    if not isinstance(return_value, dict):
-        pytest.fail(
-            f"За завданням функція має повертати словник, а повертає {type(return_value).__name__}"
-        )
+    assert return_value != None, "Функція нічого не повертає"
+    assert (
+        type(return_value) == dict
+    ), f"За завданням функція має повертати словник, а повертає {type(return_value).__name__}"
     assert len(correct_return_value) == len(
         return_value
     ), "У словнику, який описує топологію є лінки, що дублюються"

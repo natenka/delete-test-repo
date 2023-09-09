@@ -23,12 +23,10 @@ def test_task_correct_ip(ip_address):
     Перевірка роботи завдання
     """
     return_value = task_9_2.check_ip(ip_address)
-    if return_value is None:
-        pytest.fail("Функція нічого не повертає")
-    if not isinstance(return_value, bool):
-        pytest.fail(
-            f"За завданням функція має повертати True чи False, а повертає {type(return_value).__name__}"
-        )
+    assert return_value != None, "Функція нічого не повертає"
+    assert (
+        type(return_value) == bool
+    ), f"За завданням функція має повертати True чи False, а повертає {type(return_value).__name__}"
     assert True == return_value, "Функція повертає неправильне значення"
 
 
@@ -38,10 +36,8 @@ def test_task_correct_ip(ip_address):
 )
 def test_task_wrong_ip(ip_address):
     return_value = task_9_2.check_ip(ip_address)
-    if return_value is None:
-        pytest.fail("Функція нічого не повертає")
-    if not isinstance(return_value, bool):
-        pytest.fail(
-            f"За завданням функція має повертати True чи False, а повертає {type(return_value).__name__}"
-        )
+    assert return_value != None, "Функція нічого не повертає"
+    assert (
+        type(return_value) == bool
+    ), f"За завданням функція має повертати True чи False, а повертає {type(return_value).__name__}"
     assert False == return_value, "Функція повертає неправильне значення"

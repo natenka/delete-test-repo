@@ -1,3 +1,5 @@
+
+
 def test_task_stdout(capsys):
     """
     Перевірка роботи завдання
@@ -8,7 +10,9 @@ def test_task_stdout(capsys):
     correct_stdout = (
         "ip nat inside source list acl interface gigabitethernet0/1 overload"
     )
-    assert out, (
+    assert (
+        out
+    ), (
         "Нічого не виведено стандартний потік виведення. Потрібно не лише "
         "отримати потрібний результат, але й вивести його на стандартний потік "
         "виведення за допомогою print"

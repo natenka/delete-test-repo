@@ -19,7 +19,8 @@ def monkey_input_access(prompt):
             return "55"
         else:
             pytest.fail(
-                "Для access портів запит вланів має бути таким:" "Enter VLAN number:"
+                "Для access портів запит вланів має бути таким:"
+                "Enter VLAN number:"
             )
 
 

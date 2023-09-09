@@ -17,7 +17,7 @@ def monkey_input_r2(prompt):
             return "ip"
         else:
             pytest.fail(
-                "У запиті параметра не вказано доступні значення для пристрою. "
+				"У запиті параметра не вказано доступні значення для пристрою. "
                 "Для r2 це такі значення"
                 "(location, vendor, model, ios, ip)"
             )
@@ -33,7 +33,7 @@ def monkey_input_sw1(prompt):
             return "ios"
         else:
             pytest.fail(
-                "У запиті параметра не вказано доступні значення для пристрою. "
+				"У запиті параметра не вказано доступні значення для пристрою. "
                 "Для sw1 це такі значення"
                 "(location, vendor, model, ios, ip, vlans, routing)"
             )
